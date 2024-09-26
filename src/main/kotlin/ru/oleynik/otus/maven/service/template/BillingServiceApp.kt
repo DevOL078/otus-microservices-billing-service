@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class MavenServiceTemplateApplication
+class BillingServiceApp
 
 fun main(args: Array<String>) {
-	runApplication<MavenServiceTemplateApplication>(*args)
+	runApplication<BillingServiceApp>(*args)
 }

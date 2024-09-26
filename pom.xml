@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ru.oleynik.otus</groupId>
-	<artifactId>microservices-billing-service</artifactId>
+	<artifactId>billing-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>microservices-billing-service</name>
+	<name>billing-service</name>
 	<description>Billing service for Order App</description>
 
 	<properties>
