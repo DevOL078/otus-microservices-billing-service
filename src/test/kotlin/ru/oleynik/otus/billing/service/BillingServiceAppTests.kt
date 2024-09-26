@@ -1,4 +1,4 @@
-package ru.oleynik.otus.maven.service.template
+package ru.oleynik.otus.billing.service
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

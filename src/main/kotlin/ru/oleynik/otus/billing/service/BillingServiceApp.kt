@@ -1,4 +1,4 @@
-package ru.oleynik.otus.maven.service.template
+package ru.oleynik.otus.billing.service
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
