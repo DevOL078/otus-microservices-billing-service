@@ -8,7 +8,7 @@ interface AccountRepository {
     fun findByUserId(userId: UUID): Account?
     fun save(account: Account): Account
     fun deleteById(id: UUID)
-
-    fun findByUserIdOrThrow(userId: UUID): Account = findByUserId(userId)
-        ?: throw NotFoundException("account with userId $userId not found")
 }
+
+fun AccountRepository.findByUserIdOrThrow(userId: UUID): Account = findByUserId(userId)
+    ?: throw NotFoundException("account with userId $userId not found")

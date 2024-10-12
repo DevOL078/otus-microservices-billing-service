@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0.0
+      author: 'd.oleynik'
+      comment: 'create account table'
+      changes:
+        - sqlFile:
+            path: 'ddl/01_create_account_table.sql'
+            relativeToChangelogFile: true

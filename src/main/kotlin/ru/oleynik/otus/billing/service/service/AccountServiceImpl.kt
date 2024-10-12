@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 import ru.oleynik.otus.billing.service.domain.entity.Account
 import ru.oleynik.otus.billing.service.domain.repository.AccountRepository
+import ru.oleynik.otus.billing.service.domain.repository.findByUserIdOrThrow
 import java.math.BigDecimal
 import java.util.UUID
 
@@ -12,9 +13,7 @@ class AccountServiceImpl(
     private val accountRepository: AccountRepository
 ) : AccountService {
     @Transactional(readOnly = true)
-    override fun isAccountExists(userId: UUID): Boolean = accountRepository.findByUserId(userId)
-        ?.let { true }
-        ?: false
+    override fun getAccount(userId: UUID): Account = accountRepository.findByUserIdOrThrow(userId)
 
     @Transactional
     override fun create(userId: UUID): Account {

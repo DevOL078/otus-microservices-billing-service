@@ -6,7 +6,7 @@ import java.util.UUID
 
 interface AccountService {
 
-    fun isAccountExists(userId: UUID): Boolean
+    fun getAccount(userId: UUID): Account
     fun create(userId: UUID): Account
     fun changeAmount(userId: UUID, diffAmount: BigDecimal): Account
     fun deleteAccount(userId: UUID)

@@ -2,6 +2,10 @@ spring:
   application.name: billing-service
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/billing-service
+    url: jdbc:postgresql://localhost:5432/billing-service?currentSchema=account
     username: postgres
     password: password
+  liquibase:
+    enabled: true
+    change-log: classpath:liquibase/changelog.yml
+    default-schema: account
