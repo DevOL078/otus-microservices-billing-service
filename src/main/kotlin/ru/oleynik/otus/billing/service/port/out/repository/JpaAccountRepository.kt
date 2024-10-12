@@ -1,4 +1,4 @@
-package ru.oleynik.otus.billing.service.port.out
+package ru.oleynik.otus.billing.service.port.out.repository
 
 import org.springframework.data.jpa.repository.JpaRepository
 import ru.oleynik.otus.billing.service.domain.entity.Account

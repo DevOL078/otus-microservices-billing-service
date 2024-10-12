@@ -1,6 +1,7 @@
 package ru.oleynik.otus.billing.service.service
 
 import org.springframework.stereotype.Component
+import org.springframework.transaction.annotation.Transactional
 import ru.oleynik.otus.billing.service.domain.entity.Account
 import ru.oleynik.otus.billing.service.domain.repository.AccountRepository
 import java.math.BigDecimal
@@ -10,19 +11,29 @@ import java.util.UUID
 class AccountServiceImpl(
     private val accountRepository: AccountRepository
 ) : AccountService {
-    override fun isAccountExists(userId: UUID): Boolean {
-        TODO("Not yet implemented")
-    }
+    @Transactional(readOnly = true)
+    override fun isAccountExists(userId: UUID): Boolean = accountRepository.findByUserId(userId)
+        ?.let { true }
+        ?: false
 
+    @Transactional
     override fun create(userId: UUID): Account {
-        TODO("Not yet implemented")
+        val account = Account(userId = userId)
+        return accountRepository.save(account)
     }
 
+    @Transactional
     override fun changeAmount(userId: UUID, diffAmount: BigDecimal): Account {
-        TODO("Not yet implemented")
+        return accountRepository.findByUserIdOrThrow(userId)
+            .also {
+                it.amount = it.amount.add(diffAmount)
+            }
     }
 
+    @Transactional
     override fun deleteAccount(userId: UUID) {
-        TODO("Not yet implemented")
+        accountRepository.findByUserIdOrThrow(userId).also {
+            accountRepository.deleteById(it.id)
+        }
     }
 }

@@ -13,7 +13,7 @@ data class Account(
     @Id
     val id: UUID = UUID.randomUUID(),
     val userId: UUID,
-    val amount: BigDecimal,
     val createDate: Instant = Instant.now(),
     val editDate: Instant = Instant.now(),
+    var amount: BigDecimal = BigDecimal.valueOf(0L),
 )
