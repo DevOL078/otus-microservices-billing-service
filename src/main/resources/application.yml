@@ -22,6 +22,14 @@ spring:
     listener:
       ack-mode: record
 
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui/index.html
+
 application:
   kafka:
     enabled: true

@@ -1,4 +1,4 @@
-package ru.oleynik.otus.billing.service.port.`in`.controller.dto
+package ru.oleynik.otus.billing.service.port.`in`.controller.account.dto
 
 import ru.oleynik.otus.billing.service.domain.entity.Account
 import java.math.BigDecimal

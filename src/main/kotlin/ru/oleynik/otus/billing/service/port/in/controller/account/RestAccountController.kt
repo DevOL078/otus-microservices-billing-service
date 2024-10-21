@@ -1,8 +1,8 @@
-package ru.oleynik.otus.billing.service.port.`in`.controller
+package ru.oleynik.otus.billing.service.port.`in`.controller.account
 
 import org.springframework.web.bind.annotation.RestController
-import ru.oleynik.otus.billing.service.port.`in`.controller.dto.AccountDto
-import ru.oleynik.otus.billing.service.port.`in`.controller.dto.toDto
+import ru.oleynik.otus.billing.service.port.`in`.controller.account.dto.AccountDto
+import ru.oleynik.otus.billing.service.port.`in`.controller.account.dto.toDto
 import ru.oleynik.otus.billing.service.service.AccountService
 import java.math.BigDecimal
 import java.util.UUID
